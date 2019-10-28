@@ -43,7 +43,8 @@ First create a Resource Group
     * A name for the resource group 
     * Select the location
     * Click Create
-![Resource Group Details](/docsimages/createResourceGroup.PNG)   
+
+![Resource Group Details](docsimages/createResourceGroup.PNG)   
     
 
 ### Create Custom Vision instance
@@ -60,7 +61,8 @@ Now create a Custom Vision instance in your Azure account.
     * Choose the S0 tier for both 'Prediction pricing tier' and Training pricing tier
     * Select your created Resource group and make sure it is in the same data centre location (in this case 'globalaibootcamp' in West Europe
     * Click Create
-* ![Custom Vision Blade Details](/docsimages/createCustomVision.PNG)
+
+*![Custom Vision Blade Details](docsimages/createCustomVision.PNG)
 
 ### Build Classifier
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=ainights-github-amynic) and choose sign in. Sign in with your Azure credentials account
@@ -78,7 +80,8 @@ Once loaded choose 'New Project' which opens a window to enter details
 * Classification Types: Multiclass (Single tag per image)
 * Domains: Retail (compact)
 * Export Capabilities: Basic platforms
-* ![Create Custom Vision Project](docsimages/createClassifier.PNG)
+
+![Create Custom Vision Project](docsimages/createClassifier.PNG)
 
 Click on 'Create Project' and you will land on an empty workspace. 
 
@@ -86,11 +89,12 @@ Click on 'Create Project' and you will land on an empty workspace.
 
 Now you can start adding images and assigning them tags to create our image classifier.
 
-* In the top left, select 'Add images', browse for the first folder of images from the [training data](CV%20training%20images/)- Drills - and select all the images in the folder.
+* In the top left, select 'Add images', browse for the first folder of images from the [training data](CV%20training%20images/) - Drills - and select all the images in the folder.
 
 * Add the tag 'drills' to the drills images and select 'Upload files'
 
-Once successful you receive a confirmation message and you should see your images are now available in the workspace
+Once successful you receive a confirmation message and you should see your images are now available in the workspace.
+
 ![Upload images of drills](docsimages/addDrills.PNG)
 
 Now complete the same steps of uploading and tagging images for the other 4 tool categories in the folder. For each type of tool:
@@ -128,7 +132,7 @@ To add these images to the model - select the first image, review the results th
 
 ![Add Re-training Tag](docsimages/testImage.PNG)
 
-This image will disappear from the  your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
+This image will disappear from the your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
 
 #### Publish Model
 
@@ -159,11 +163,11 @@ You can use the prior info to set the URL, the Header and the Body (using both a
 * Headers: set "Prediction-Key" and "Content-Type" items, in this case we use a URL for the image, so we set Content-Type to JSON
 * Body: in this case we enter the image URL "https://upload.wikimedia.org/wikipedia/commons/d/d7/Battdrill.jpg"
 
-![Postman Header](docsimages/postmandHeader.PNG)
+![Postman Header](docsimages/postmanHeader.png)
 
-![Postman Body](docsimages/postmandBody.PNG)
+![Postman Body](docsimages/postmanBody.png)
 
 Now click on Send...
-What kind of tool did you uploage?
+What kind of tool did you upload?
 
 **Great work!** you have created your specialised tool classification model using the Azure Custom Vision Service
