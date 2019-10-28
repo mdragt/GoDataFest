@@ -1,1 +1,169 @@
+# Workshop 1: Custom Vision AI - Find the right Tool!
 
+## Session Information 
+**Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
+
+**Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch. 
+We will cover pre-trained AI APIs, such as [computer vision](https://azure.microsoft.com/en-gb/services/cognitive-services/directory/vision/?WT.mc_id=ainights-github-amynic), that are accessed by REST protocol. Next we will dive into Custom AI that uses transfer learning - [Microsoft Azure Custom Vision](https://azure.microsoft.com/en-gb/services/cognitive-services/custom-vision-service/?WT.mc_id=ainights-github-amynic). This enables you to provide a small amount of your own data to train an image classification model. Wrapping the workshop up by building our custom trained AI into an application - using [Logic Apps](https://azure.microsoft.com/en-gb/services/logic-apps/?WT.mc_id=ainights-github-amynic), this technology is ideal for building data pipeline processes that work with your machine learning models.
+
+
+## Pre-requisites for your machine
+* Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/mdragt/GoDataFest.git``` or choose 'Clone or Download' green button and then 'Download ZIP'
+* Azure Pass or [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
+* Laptop with a modern web browser (Google Chrome, Microsoft Edge)
+* Postman
+
+> *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
+
+## Sections:
+
+* **Task 1:** Microsoft Azure Cognitive Services - Custom Vision [Go to Section](#task-1-microsoft-azure-cognitive-services---custom-vision)
+* **Task 2:** Build Custom AI into an Application - Azure Logic Apps [Go to Section](#task-2-build-custom-ai-into-an-application---azure-logic-apps)
+
+## Task 1: Microsoft Azure Cognitive Services - Custom Vision
+
+Using Microsoft Azure Custom Vision service you can start to build your own personalised image classification and object detection algorithms with very little code. In this exercise we will create a tool classification algorithm using tool images sourced from [WikiMedia Commons](https://github.com/mdragt/ignite-learning-paths/blob/master/aiml/aiml20/CV%20training%20images/ATTRIBUTIONS.md), used for the Ignite Tours.
+
+We have 5 classes of tools with a various amount of images each. You can find the training files [here](CV%20training%20images/)
+* Drills
+* Hammers
+* Hard hats
+* Pliers
+* Screwdrivers
+
+There is also a set of test images (not for training) in this [folder](CV%20test%20images).
+
+### Create Resource Group
+First create a Resource Group
+
+* Go to the [Azure Portal](https://ms.portal.azure.com) main dashboard. 
+* Click 'Create a Resource' in the top left
+* Search for 'Resource group' 
+* Enter details to create
+    * A name for the resource group 
+    * Select the location
+    * Click Create
+![Resource Group Details](/docsimages/createResourceGroup.PNG)   
+    
+
+### Create Custom Vision instance
+Now create a Custom Vision instance in your Azure account. 
+
+* Go to your created Resource group
+* Click +Add
+* Search for Custom Vision
+* Click Create
+* Enter details to create
+    * A name for the service 
+    * Select your subscription 
+    * Select the data centre location (in this example West Europe, but you can select your own region)
+    * Choose the S0 tier for both 'Prediction pricing tier' and Training pricing tier
+    * Select your created Resource group and make sure it is in the same data centre location (in this case 'globalaibootcamp' in West Europe
+    * Click Create
+* ![Custom Vision Blade Details](/docsimages/createCustomVision.PNG)
+
+### Build Classifier
+Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=ainights-github-amynic) and choose sign in. Sign in with your Azure credentials account
+
+> Accept the terms and conditions box to continue
+
+#### Create Project
+
+Once loaded choose 'New Project' which opens a window to enter details
+
+* Name: choose a suitable name
+* Description: add a description of the classifier (example shown in image below)
+* Resource Group: choose the resource group you created your custom vision service in (example: ainights[SO])
+* Project Types: Classification
+* Classification Types: Multiclass (Single tag per image)
+* Domains: Retail (compact)
+* Export Capabilities: Basic platforms
+* ![Create Custom Vision Project](docsimages/createClassifier.PNG)
+
+Click on 'Create Project' and you will land on an empty workspace. 
+
+#### Add Images
+
+Now you can start adding images and assigning them tags to create our image classifier.
+
+* In the top left, select 'Add images', browse for the first folder of images from the [training data](CV%20training%20images/)- Drills - and select all the images in the folder.
+
+* Add the tag 'drills' to the drills images and select 'Upload files'
+
+Once successful you receive a confirmation message and you should see your images are now available in the workspace
+![Upload images of drills](docsimages/addDrills.PNG)
+
+Now complete the same steps of uploading and tagging images for the other 4 tool categories in the folder. For each type of tool:
+* Click 'Add images'
+* Select all the tool images
+* Add the class label (hard hat, pliers, etc.)
+* Choose upload
+* Confirm images uploaded into the workspace
+
+Now you should have all categories uploaded and on the left hand side you can see your tool classes and you can filter depending on type of tool image.
+
+#### Train Model
+
+Now you are ready to train your algorithm on the tool image data you have uploaded. Select the green **'Train'** button in the top right corner. For this demo, you can use the "Fast Training" option.
+
+Once the training process is complete it will take you to the Performance tab. Here you will receive machine learning evaluation metrics for your model. Here you algo get information regarding the class imbalance, as some tools had less images than others.
+
+![Evaluation Metrics](docsimages/trainMetrics.PNG)
+
+#### Test Model
+
+Now you have a model, you need to test the model. Choose the 'Quick Test' button in the top right *(next to the train button)* this will open a window where you can browse for a local image or enter a web URL.
+
+Browse for an image in the [test folder](CV%20test%20images) (images the model have not been trained on) and upload this image. The image will be analysed and a result returned of what tool the model thinks it is (prediction tag) and the models confidence of its result (prediction probability)
+
+![Quick Test](docsimages/quickTest.PNG)
+
+> Repeat this process for other image in the test folder, or search online for other images to see how the model performs.
+
+#### Retrain Model
+
+If you click on the **'Predictions'** tab on the top toolbar - you should see all the test images you have submitted. This section is for re-training, as you get new data you can add this to your model to improve its performance. The images are ordered by importance - the image, which if classified correctly, will add the most new information to the model is listed first. Whereas the last image might be very similar to other images already learnt by the model so this is less important to classify correctly.
+
+To add these images to the model - select the first image, review the results the model provided and then in the 'My Tags' box enter the correct tag and click 'save and close'
+
+![Add Re-training Tag](docsimages/testImage.PNG)
+
+This image will disappear from the  your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
+
+#### Publish Model
+
+To use this model within applications you need the prediction details. Therefore, you have to go to the Performance tab from the top bar, click the **Publish** button. 
+
+![Prediction model](docsimages/publishModel.PNG)
+
+Please provide a name for your model and select the Prediction resource, and click on Publish.
+
+![Prediction model resource](docsimages/publishModel2.PNG)
+
+You can now select the **Prediction URL** button to gain all information you need to create a Postman call to your API.
+
+![Prediction model URL](docsimages/predictionURL.PNG)
+
+### Use Model with Postman
+
+Open Postman and create a new collection.
+![Postman Collection](docsimages/createPostmanCollection.PNG)
+
+Now create a new request.
+![Postman Request](docsimages/createPostmanRequest.PNG)
+
+You can use the prior info to set the URL, the Header and the Body (using both an image or an image URL). 
+
+* Type of request: select POST
+* URL: enter the Prediction URL
+* Headers: set "Prediction-Key" and "Content-Type" items, in this case we use a URL for the image, so we set Content-Type to JSON
+* Body: in this case we enter the image URL "https://upload.wikimedia.org/wikipedia/commons/d/d7/Battdrill.jpg"
+
+![Postman Header](docsimages/postmandHeader.PNG)
+
+![Postman Body](docsimages/postmandBody.PNG)
+
+Now click on Send...
+What kind of tool did you uploage?
+
+**Great work!** you have created your specialised tool classification model using the Azure Custom Vision Service
