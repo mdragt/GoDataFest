@@ -14,6 +14,8 @@ Pre-requisites for your machine:
 
 All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems
 
+Go to [Workshop 1: Custom Vision AI](https://github.com/mdragt/GoDataFest/blob/master/Workshop%201%20Custom%20Vision%20AI/README.md)
+
 
 ## Workshop 2: AutoML
 

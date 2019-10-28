@@ -1,4 +1,4 @@
-# Workshop 1: Custom Vision AI - Find the right Tool!
+# Workshop 1: Custom Vision AI - Find the Right Tool!
 
 ## Session Information 
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
@@ -11,7 +11,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/mdragt/GoDataFest.git``` or choose 'Clone or Download' green button and then 'Download ZIP'
 * Azure Pass or [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
-* Postman
+* Postman, API Development Environment - [available on Windows, Linux and macOS](https://www.getpostman.com/)
 
 > *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
 
@@ -44,7 +44,7 @@ First create a Resource Group
     * Select the location
     * Click Create
 
-![Resource Group Details](docsimages/createResourceGroup.PNG)   
+![Resource Group Details](docsimages/createResourceGroup.png)   
     
 
 ### Create Custom Vision instance
@@ -62,7 +62,7 @@ Now create a Custom Vision instance in your Azure account.
     * Select your created Resource group and make sure it is in the same data centre location (in this case 'globalaibootcamp' in West Europe
     * Click Create
 
-![Custom Vision Blade Details](docsimages/createCustomVision.PNG)
+![Custom Vision Blade Details](docsimages/createCustomVision.png)
 
 ### Build Classifier
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=ainights-github-amynic) and choose sign in. Sign in with your Azure credentials account
@@ -81,7 +81,7 @@ Once loaded choose 'New Project' which opens a window to enter details
 * Domains: Retail (compact)
 * Export Capabilities: Basic platforms
 
-![Create Custom Vision Project](docsimages/createClassifier.PNG)
+![Create Custom Vision Project](docsimages/createClassifier.png)
 
 Click on 'Create Project' and you will land on an empty workspace. 
 
@@ -95,7 +95,7 @@ Now you can start adding images and assigning them tags to create our image clas
 
 Once successful you receive a confirmation message and you should see your images are now available in the workspace.
 
-![Upload images of drills](docsimages/addDrills.PNG)
+![Upload images of drills](docsimages/addDrills.png)
 
 Now complete the same steps of uploading and tagging images for the other 4 tool categories in the folder. For each type of tool:
 * Click 'Add images'
@@ -112,7 +112,7 @@ Now you are ready to train your algorithm on the tool image data you have upload
 
 Once the training process is complete it will take you to the Performance tab. Here you will receive machine learning evaluation metrics for your model. Here you algo get information regarding the class imbalance, as some tools had less images than others.
 
-![Evaluation Metrics](docsimages/trainMetrics.PNG)
+![Evaluation Metrics](docsimages/trainMetrics.png)
 
 #### Test Model
 
@@ -120,7 +120,7 @@ Now you have a model, you need to test the model. Choose the 'Quick Test' button
 
 Browse for an image in the [test folder](CV%20test%20images) (images the model have not been trained on) and upload this image. The image will be analysed and a result returned of what tool the model thinks it is (prediction tag) and the models confidence of its result (prediction probability)
 
-![Quick Test](docsimages/quickTest.PNG)
+![Quick Test](docsimages/quickTest.png)
 
 > Repeat this process for other image in the test folder, or search online for other images to see how the model performs.
 
@@ -130,7 +130,7 @@ If you click on the **'Predictions'** tab on the top toolbar - you should see al
 
 To add these images to the model - select the first image, review the results the model provided and then in the 'My Tags' box enter the correct tag and click 'save and close'
 
-![Add Re-training Tag](docsimages/testImage.PNG)
+![Add Re-training Tag](docsimages/testImage.png)
 
 This image will disappear from the your predictions workspace and be added to the training images workspace. Once you add a few new images and tags you can re-train the model to see if there are improvements.
 
@@ -138,23 +138,23 @@ This image will disappear from the your predictions workspace and be added to th
 
 To use this model within applications you need the prediction details. Therefore, you have to go to the Performance tab from the top bar, click the **Publish** button. 
 
-![Prediction model](docsimages/publishModel.PNG)
+![Prediction model](docsimages/publishModel.png)
 
 Please provide a name for your model and select the Prediction resource, and click on Publish.
 
-![Prediction model resource](docsimages/publishModel2.PNG)
+![Prediction model resource](docsimages/publishModel2.png)
 
 You can now select the **Prediction URL** button to gain all information you need to create a Postman call to your API.
 
-![Prediction model URL](docsimages/predictionURL.PNG)
+![Prediction model URL](docsimages/predictionURL.png)
 
 ### Use Model with Postman
 
 Open Postman and create a new collection.
-![Postman Collection](docsimages/createPostmanCollection.PNG)
+![Postman Collection](docsimages/createPostmanCollection.png)
 
 Now create a new request.
-![Postman Request](docsimages/createPostmanRequest.PNG)
+![Postman Request](docsimages/createPostmanRequest.png)
 
 You can use the prior info to set the URL, the Header and the Body (using both an image or an image URL). 
 
