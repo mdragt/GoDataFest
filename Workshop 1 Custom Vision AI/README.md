@@ -271,7 +271,7 @@ Select the options below:
 Then choose +New step. Type **Parse JSON** and select the parse JSON operator as part of the data Data Operations category.
 
 * **Content:** select the box and from the Dynamic Content box on the right, select **Body**
-* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema1 file](sample-code/logic-app-task/logic-app-schema1.json)
+* **Schema:** select this box and enter the JSON schema provided in the [logic-app-schema file](logic-app-schema.json), created by [Amy Boyd](https://github.com/amynic/).
 
 ![Parse JSON](docsimages/parseJSON.png)
 
@@ -344,7 +344,7 @@ All sections should have a green tick and you can select each one to view the in
 
 ![Logic app run successful](docsimages/checkRun.png)
 
-Finally navigate to your results blob storage account, select blob, enter the results container and review the file now created there. The contents of the file should show similar to the below - given the dog image input, the predicted class of the dog and also a confidence score
+Finally navigate to your results blob storage account, select blob, enter the results container and review the file now created there. The contents of the file should show similar to the below - given the dog image input, the predicted class of the tool and also a confidence score:
 
 ![Result](docsimages/resultLogicApp.png)
 
