@@ -20,3 +20,8 @@ Go to [Workshop 1: Custom Vision AI](https://github.com/mdragt/GoDataFest/blob/m
 ## Workshop 2: AutoML
 
 ## Workshop 3: Visual Interface Azure Machine Learning Service
+
+In this workshop, you will learn how to build a machine learning model with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
+
+Go to [Workshop 3: Visual Interface for Azure Machine Learning Service](https://github.com/mdragt/GoDataFest/tree/master/Workshop%203%20Visual%20Interface)
+
