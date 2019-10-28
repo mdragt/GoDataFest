@@ -1,8 +1,19 @@
 # Workshop 3: How to Build a Machine Learning Model with the Visual Interface for Azure Machine Learning Service
 
-In this workshop, you will learn how to build a machine learning model with the visual interface for Azure Machine Learning Service. We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
+In this workshop, you will learn how to build a machine learning model with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
 
 *Note: we assume you have basic machine learning knowledge, as this workshop only looks at the tooling and not on the underlying techniques.*
+
+# Prerequisites
+
+* Azure Pass or subscription
+* Machine Learning Workspace. You can create such workspace by going to the [Azure Portal](https://portal.azure.com) and click on Create new resource, and search for Machine Learning:
+
+![Create Machine Learning Workspace](docsimages/createMachineLearningWorkspace.png)
+
+From your Machine Learning Workspace, you can launch the visual interface:
+
+![Launch Visual Interface](docsimages/launchVisualInterface.png)
 
 # Visual Interface for Azure Machine Learning Service
 
@@ -18,7 +29,7 @@ With the visual interface for Azure Machine Learning Service, developers and dat
 
 It is organized as follows:
 
-* Experiments: a list of experiments that you have created. 
+* Experiments: a list of experiments that you have created.
 * Web Services: a list of experiments that you have published as a webservice.
 * Datasets: the datasets that you have uploaded and a list of sample datasets.
 
@@ -83,7 +94,7 @@ Now you are going to create e new experiment.
 * Select the option to create a Blank Experiment. This will create a new experiment and will show you the canvas where you can drag your modules on.
 * Rename the experiment.
 
-![Create a new experiment](docsImages/createExperiment.png)
+![Create a new experiment](docsimages/createExperiment.png)
 
 As you have uploaded the dataset, you can now find it under My Datasets. Drag it on the canvas.
 
