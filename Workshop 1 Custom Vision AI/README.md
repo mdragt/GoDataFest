@@ -11,7 +11,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/mdragt/GoDataFest.git``` or choose 'Clone or Download' green button and then 'Download ZIP'
 * Azure Pass or [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
-* Postman
+* Postman, API Development Environment - [available on Windows, Linux and macOS](https://www.getpostman.com/)
 
 > *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
 
