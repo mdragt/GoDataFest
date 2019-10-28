@@ -1,4 +1,4 @@
-# Workshop 1: Custom Vision AI - Find the right Tool!
+# Workshop 1: Custom Vision AI - Find the Right Tool!
 
 ## Session Information 
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
