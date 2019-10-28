@@ -140,7 +140,7 @@ To use this model within applications you need the prediction details. Therefore
 
 ![Prediction model](docsimages/publishModel.png)
 
-Please provide a name for your model and select the Prediction resource, and click on Publish.
+Please provide a name for your model and select the Prediction resource, and click on Publish. Please take notice of you Publication Resource, which you need in the second task.
 
 ![Prediction model resource](docsimages/publishModel2.png)
 
@@ -230,9 +230,7 @@ Head to the Azure Portal Homepage. You are going to use Event Grid, a service th
 
 Navigate to Subscriptions, select your subscription and find Resource Providers in the left pane. If it's not in left panel, select "All services" and find in here. Once the resource providers are listed - search "event" and select **Microsoft.EventGrid**.
 
-![Register Event Grid](docs-images/subscriptions.JPG)
-
-If this is not already status registered, select **register** from the toolbar
+If this is not already status registered, select **register** from the toolbar.
 
 ![Register Event Grid selection](docsimages/eventgrid.png)
 
@@ -250,7 +248,7 @@ Choose **Create**
 
 ![Logic App](docsimages/createLogicApp.png)
 
-Once created, go to resource. From here we can create our logic process. Select **Logic app designer** from the left menu and then the  **When an Event Grid resource event occurs** option
+Once created, go to resource. From here we can create our logic process. Select **Logic app designer** from the left menu and then the  **When an Event Grid resource event occurs** option.
 
 ![Logic App Trigger](docsimages/whenEventgrid.png)
 
@@ -295,7 +293,6 @@ Now you need to fill in the details of the Custom Vision process:
 * **Image URL:** select the input box and on the right side select URL from Parse JSON outputs
 
 ![Get URL for image](docsimages/projectSettings.png)
-
 
 Click on +New step.
 
@@ -352,4 +349,3 @@ Finally navigate to your results blob storage account, select blob, enter the re
 ## Clean up resources	
 
 Finally, If you don't expect to need these resources in the future, you can delete them by deleting the resource group. To do so, select the resource group for this workshop, select Delete, then confirm the name of the resource group to delete.
-
