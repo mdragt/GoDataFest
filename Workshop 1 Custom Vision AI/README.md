@@ -308,7 +308,7 @@ In the Condition box, select choose a value. From Dynamic content find 'Predict 
 
 Set the condition to be **Prediction Probability** greater than 0.7 (as shown below), as we only want to save results with a probability of 0.7 or higher.
 
-![Condition value](docs-images/probability.JPG)
+![Condition value](docsimages/setCondition.png)
 
 In the **If True** box select **Add an action**.
 
