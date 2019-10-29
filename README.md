@@ -29,3 +29,9 @@ Go to [Workshop 2: Visual Interface for Azure Machine Learning Service](https://
 In this workshop, you will learn how to build a machine learning model with the [visual interface for Automated ML](https://ml.azure.com/). You will use the same data from the prior workshop.
 
 Go to [Workshop 3: Visual Interface for Automated ML](https://github.com/mdragt/GoDataFest/tree/master/Workshop%203%20AutoML)
+
+## Bonus track: Azure Machine Learning Service and Azure Notebooks - Predict a hand-written number
+
+In this hands on lab you are going to use Azure Machine Learning Service and Azure Notebooks to create a MNIST model and run in in a container in Azure.
+
+Go to [Bonus track: Azure Machine Learning Service and Azure Notebooks](https://github.com/GlobalAICommunity/HOL-AMLS)
