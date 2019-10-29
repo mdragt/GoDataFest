@@ -66,8 +66,6 @@ Now create a Custom Vision instance in your Azure account.
     * Select your created Resource group and make sure it is in the same data centre location (in this case 'globalaibootcamp' in West Europe
     * Click Create
 
-![Custom Vision Blade Details](docsimages/createCustomVision.png)
-
 ### Build Classifier
 
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=ainights-github-amynic) and choose sign in. Sign in with your Azure credentials account.
