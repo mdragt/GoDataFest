@@ -1,4 +1,5 @@
 # GoDataFest
+
 GoDataFest Azure Machine Learning Workshops
 
 ## Workshop 1: Custom Vision AI - Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services (1 hour)
@@ -17,11 +18,14 @@ All demos and content have been tested on a Windows PC, however all options shou
 Go to [Workshop 1: Custom Vision AI](https://github.com/mdragt/GoDataFest/blob/master/Workshop%201%20Custom%20Vision%20AI/README.md)
 
 
-## Workshop 2: AutoML
+## Workshop 2: Visual Interface Azure Machine Learning Service - Predict Wine Quality
 
-## Workshop 3: Visual Interface Azure Machine Learning Service
+In this workshop, you will learn how to build a machine learning model to predict Wine Quality with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
 
-In this workshop, you will learn how to build a machine learning model with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
+Go to [Workshop 2: Visual Interface for Azure Machine Learning Service](https://github.com/mdragt/GoDataFest/tree/master/Workshop%203%20Visual%20Interface)
 
-Go to [Workshop 3: Visual Interface for Azure Machine Learning Service](https://github.com/mdragt/GoDataFest/tree/master/Workshop%203%20Visual%20Interface)
+## Workshop 3: Visual Interface Automated ML - Predict Wine Quality
 
+In this workshop, you will learn how to build a machine learning model with the [visual interface for Automated ML](https://ml.azure.com/). You will use the same data from the prior workshop.
+
+Go to [Workshop 3: Visual Interface for Automated ML]()
