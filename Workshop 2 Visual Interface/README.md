@@ -1,6 +1,6 @@
-# Workshop 3: How to Build a Machine Learning Model with the Visual Interface for Azure Machine Learning Service
+# Workshop 2: How to Build a Machine Learning Model with the Visual Interface for Azure Machine Learning Service - Predict Wine Quality
 
-In this workshop, you will learn how to build a machine learning model with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
+In this workshop, you will learn how to build a machine learning model to predict the quality of wine with the visual interface for [Azure Machine Learning Service](https://studio.azureml.com/). We will use an example case study, with the Data Science Lifecycle as guideline. You will first look at the Business Understanding, proceed with the Data Acquisition and Understanding. Then you will start the Modeling part, the Deployment, and finally the Customer Acceptance part. We will first introduce every step, and then elaborate on the corresponding visual interface components to fulfil the step.
 
 *Note: we assume you have basic machine learning knowledge, as this workshop only looks at the tooling and not on the underlying techniques.*
 

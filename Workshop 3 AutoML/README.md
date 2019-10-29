@@ -1,4 +1,4 @@
-# Workshop 2 Automated ML - Predict Wine Quality
+# Workshop 3 Automated ML - Predict Wine Quality
 
 In this case, you want to predict the quality of wine. We used a dataset from UCI Machine Learning repository that contained 6497 observations with physicochemical properties of red and white Portuguese wine and their quality (Cortez).
 
