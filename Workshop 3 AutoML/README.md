@@ -91,5 +91,3 @@ During the run, you get an overview of how well the models are performing:
 The running process can take quite a while (remember, we defined 1 hour as possible running time), so take a coffee and go to the next workshop.
 
 When the running process is finished, you have the option to deploy the best model.
-
-

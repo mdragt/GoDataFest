@@ -1,6 +1,7 @@
 # Workshop 1: Custom Vision AI - Find the Right Tool!
 
-## Session Information 
+## Session Information
+
 **Session Title:** Creating applications that can see, hear, speak or understand - using Microsoft Cognitive Services
 
 **Session Abstract:** In this workshop you will be introduced to the [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-gb/services/cognitive-services/?WT.mc_id=ainights-github-amynic), a range of offerings you can use to infuse intelligence and machine learning into your applications without needing to build the code from scratch. 
@@ -8,6 +9,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 
 ## Pre-requisites for your machine
+
 * Clone this repository to your local machine to gain images and code samples you need for the demos: ```git clone https://github.com/mdragt/GoDataFest.git``` or choose 'Clone or Download' green button and then 'Download ZIP'
 * Azure Pass or [Microsoft Azure Subscription](https://azure.microsoft.com/en-gb/free/?WT.mc_id=ainights-github-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
@@ -15,7 +17,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 
 > *All demos and content have been tested on a Windows PC, however all options should run from macOS and Linux machines as well. Please provide information via an issue or pull request if you have feedback on other operating systems*  
 
-## Sections:
+## Sections
 
 * **Task 1:** Microsoft Azure Cognitive Services - Custom Vision [Go to Section](#task-1-microsoft-azure-cognitive-services---custom-vision)
 * **Task 2:** Build Custom AI into an Application - Azure Logic Apps [Go to Section](#task-2-build-custom-ai-into-an-application---azure-logic-apps)
@@ -25,6 +27,7 @@ We will cover pre-trained AI APIs, such as [computer vision](https://azure.micro
 Using Microsoft Azure Custom Vision service you can start to build your own personalised image classification and object detection algorithms with very little code. In this exercise we will create a tool classification algorithm using tool images sourced from [WikiMedia Commons](https://github.com/mdragt/ignite-learning-paths/blob/master/aiml/aiml20/CV%20training%20images/ATTRIBUTIONS.md), used for the Ignite Tours.
 
 We have 5 classes of tools with a various amount of images each. You can find the training files [here](CV%20training%20images/):
+
 * Drills
 * Hammers
 * Hard hats
@@ -34,20 +37,21 @@ We have 5 classes of tools with a various amount of images each. You can find th
 There is also a set of test images (not for training) in this [folder](CV%20test%20images).
 
 ### Create Resource Group
+
 First create a Resource Group.
 
-* Go to the [Azure Portal](https://ms.portal.azure.com) main dashboard. 
+* Go to the [Azure Portal](https://ms.portal.azure.com) main dashboard.
 * Click 'Create a Resource' in the top left
-* Search for 'Resource group' 
+* Search for 'Resource group'
 * Enter details to create
-    * A name for the resource group 
+    * A name for the resource group
     * Select the location
     * Click Create
 
-![Resource Group Details](docsimages/createResourceGroup.png)   
-    
+![Resource Group Details](docsimages/createResourceGroup.png)  
 
 ### Create Custom Vision instance
+
 Now create a Custom Vision instance in your Azure account. 
 
 * Go to your created Resource group
@@ -55,8 +59,8 @@ Now create a Custom Vision instance in your Azure account.
 * Search for Custom Vision
 * Click Create
 * Enter details to create
-    * A name for the service 
-    * Select your subscription 
+    * A name for the service
+    * Select your subscription
     * Select the data centre location (in this example West Europe, but you can select your own region)
     * Choose the S0 tier for both 'Prediction pricing tier' and Training pricing tier
     * Select your created Resource group and make sure it is in the same data centre location (in this case 'globalaibootcamp' in West Europe
@@ -65,6 +69,7 @@ Now create a Custom Vision instance in your Azure account.
 ![Custom Vision Blade Details](docsimages/createCustomVision.png)
 
 ### Build Classifier
+
 Now we can build our classifier, navigate to [https://www.customvision.ai](https://www.customvision.ai/?WT.mc_id=ainights-github-amynic) and choose sign in. Sign in with your Azure credentials account.
 
 > Accept the terms and conditions box to continue.
@@ -83,7 +88,7 @@ Once loaded choose 'New Project' which opens a window to enter details:
 
 ![Create Custom Vision Project](docsimages/createClassifier.png)
 
-Click on 'Create Project' and you will land on an empty workspace. 
+Click on 'Create Project' and you will land on an empty workspace.
 
 #### Add Images
 
@@ -98,6 +103,7 @@ Once successful, you receive a confirmation message and you should see that your
 ![Upload images of drills](docsimages/addDrills.png)
 
 Now complete the same steps of uploading and tagging images for the other 4 tool categories in the folder. For each type of tool:
+
 * Click 'Add images'
 * Select all the tool images
 * Add the class label (hard hat, pliers, etc.)
@@ -185,6 +191,7 @@ Go to the prior created Resource group on the Azure portal and click "Add" to cr
 ![Azure Storage Account](docsimages/createStorageAccount.png)
 
 We are going to create two storage accounts:
+
 * one for the images to be dropped into to be processed (called globalaistor)
 * another for the results after processing to be uploaded to (called globalairesult)
 
@@ -213,9 +220,9 @@ Select **Containers** to review your empty blob storage account.
 We need to add a container to the storage account to store our images and results.
 
 Select the **+ Container** button and create a name for the container
-> an example for the **globalaistor** account would be **images** 
+> an example for the **globalaistor** account would be **images**
 
-> an example for the **globalairesult** account would be **results** 
+> an example for the **globalairesult** account would be **results**
 
 For the public access level setting select **Container (anonymous read access for containers and blobs)**
 ![Create a container](docsimages/createContainer.png)
@@ -238,6 +245,7 @@ If this is not already status registered, select **register** from the toolbar.
 Once registered with a green tick - go back to your Resource Group. Select **Add**. Type Logic App and select the service.
 
 Create the logic app by entering some setup detail like below:
+
 * **Name:** suitable name for the tool classification application
 * **Subscription:** Choose your subscription
 * **Resource Group:** (use existing e.g. globalaibootcamp) select the resource group you have been working for the whole workshop
@@ -259,6 +267,7 @@ Connect to Azure event grid by signing in using your Azure credentials.
 Once connected and you see a green tick, select continue.
 
 Select the options below:
+
 * **Subscription:** your subscription
 * **Resource Type:** Microsoft.Storage.StorageAccounts
 * **Resource Name:** choose your image storage account (e.g. globalaistor)
@@ -278,6 +287,7 @@ Then choose next step. Type **Custom Vision** and select the **Classify an image
 ![Custom vision - classify image url](docsimages/classifyImage.png)
 
 First, you have to create the Custom Vision Connection.
+
 * **Connection Name:** Give your connection a name
 * **Prediction Key:** Use the prediction key from your model (you can find this information under your model settings of the Custom Vision webpage) NOTE: make sure you use the right key
 * **URL:** Endpoint of the prediction service
@@ -328,7 +338,7 @@ Finally you are ready to save the Logic App in the top action bar. Once saved, l
 
 ### Test your Logic App
 
-Now navigate to your images storage account (easy to find from the resource group section). 
+Now navigate to your images storage account (easy to find from the resource group section).
 Choose Containers and select the images container. In there you should see an upload button. Upload one of the images from the tools data testset folder.
 
 ![Upload Blob](docsimages/uploadImage.png)
@@ -345,7 +355,6 @@ Finally navigate to your results blob storage account, select blob, enter the re
 
 ![Result](docsimages/resultLogicApp.png)
 
-
-## Clean up resources	
+## Clean up resources
 
 Finally, If you don't expect to need these resources in the future, you can delete them by deleting the resource group. To do so, select the resource group for this workshop, select Delete, then confirm the name of the resource group to delete.
