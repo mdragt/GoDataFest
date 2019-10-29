@@ -312,7 +312,7 @@ Choose **Add an action**. Search Control, select the control icon and then from 
 
 ![If Statement](docsimages/addCondition.png)
 
-In the Condition box, select choose a value. From Dynamic content find 'Predict Tags from Image URL' and then **Probability**
+In the Condition box, select choose a value. From Dynamic content find 'Classify an image url' and then **Prediction Probability**
 
 Set the condition to be **Prediction Probability** greater than 0.7 (as shown below), as we only want to save results with a probability of 0.7 or higher.
 
