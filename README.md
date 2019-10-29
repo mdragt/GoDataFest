@@ -8,7 +8,7 @@ In this workshop you will be introduced to the Microsoft Azure Cognitive Service
 
 Pre-requisites for your machine:
 
-* Clone [this repository](https://github.com/mdragt/ignite-learning-paths) to your local machine to gain images and code samples you need for this workshop
+* Clone [this repository](https://github.com/mdragt/GoDataFest) to your local machine to gain images and code samples you need for this workshop
 * Microsoft Azure Pass or Subscription - get a free trial [here](https://azure.microsoft.com/en-gb/free/?WT.mc_id=globalainights-content-amynic)
 * Laptop with a modern web browser (Google Chrome, Microsoft Edge)
 * Postman, API Development Environment - [available on Windows, Linux and macOS](https://www.getpostman.com/)
