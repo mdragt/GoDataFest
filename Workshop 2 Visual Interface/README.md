@@ -76,7 +76,7 @@ You start with ingesting the data, for which you have three options:
 
 Once you have the data, you can start inspecting it, and start the pre-processing part to obtain a clean, high-quality data set.
 
-We obtained the data from the UCI Machine Learning repository website and combined the red and white datasets. This can be found in the additional GitHub repo [Wine Quality: Data ingest and exploratory data analysis](https://github.com/mdragt/WineQuality) that can be used for this workshop. The dataset will be prepared so you can upload it to the Visual interface (preview) for Azure Machine Learning Service.
+We obtained the data from the UCI Machine Learning repository website and combined the red and white datasets. This file 'winedata.csv' can be found in the GitHub repo [Wine Quality: Data ingest and exploratory data analysis](https://github.com/mdragt/WineQuality) that can be used for this workshop. The dataset will be prepared so you can upload it to the Visual interface (preview) for Azure Machine Learning Service.
 
 *Note: this dataset is from a GitHub repo, meaning that it might be updated every now and then.*
 
@@ -84,7 +84,7 @@ To upload the dataset:
 
 * Click on + New at the left bottom of the page.
 * Select Datasets
-* Select Upload from Local File and select the local datafile from the GitHub repository.
+* Select Upload from Local File and select the local datafile 'winedata.csv' from the GitHub repository.
 
 ![Upload the dataset](docsimages/uploadData.png)
 
